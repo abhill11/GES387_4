@@ -56,14 +56,14 @@
 
         var antique = L.tileLayer('https://cartocdn_{s}.global.ssl.fastly.net/base-antique/{z}/{x}/{y}.png', {
            attribution: 'Map tiles by Carto, under CC BY 3.0. Data by OpenStreetMap, under ODbL.',
-           maxZoom: 15,
-           minZoom: 5
+           maxZoom: 9,
+           minZoom: 6
          }).addTo(map);
 
         var terrain2 = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
              attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-             maxZoom: 15,
-             minZoom: 5,
+             maxZoom: 9,
+             minZoom: 6,
              id: 'mapbox.mapbox-terrain-v2',
              accessToken: 'pk.eyJ1IjoiYWJoaWxsMTEiLCJhIjoiY2tlZGZvM3FmMDJvdTJybzdrZXFocjJ6ciJ9.ipkQlb_WIrF-UasYrG7h3Q'
           }).addTo(map);
@@ -143,7 +143,7 @@
         mouseout: resetHighlight,    // Do what defined by the resetHighlight function on mouseout
     });
 
-    
+
 }
     Covid = L.geoJson(data,{
           style:style,
