@@ -23,6 +23,7 @@
 
         <script type="text/javascript" src="data.js"></script>
         <script type="text/javascript" src="data1.js"></script>
+        <script type="text/javascript" src="Richmond.js"></script>
 
         <style>
           /* Optional: adjust the values below to change the appearance of the legend */
@@ -112,6 +113,7 @@
             };
             }
 
+
       function highlightFeature(e) {
           // Get access to the feature that was hovered through e.target
           var feature = e.target;
@@ -196,6 +198,14 @@
                   return div;
                   };
 
+
+
+
+    Richmond = L.geoJson(Richmond).addTo(map);
+
+
+
+
               covidlegend.addTo(map);
               popdenlegend.addTo(map);
 
@@ -207,7 +217,8 @@
 
              var overlaymaps = {
              "Percentage of Positive Cases": Covid,
-             "Population Density": PopDen
+             "Population Density": PopDen,
+             "Capital City - Richmond": Richmond,
              };
 
              L.control.layers(basemaps, overlaymaps).addTo(map);
