@@ -142,6 +142,8 @@
         mouseover: highlightFeature, // Do what defined by the highlightFeature function on mouseover
         mouseout: resetHighlight,    // Do what defined by the resetHighlight function on mouseout
     });
+
+    
 }
     Covid = L.geoJson(data,{
           style:style,
@@ -196,8 +198,9 @@
               popdenlegend.addTo(map);
 
               var basemaps = {
-              "Antique Canvas": antique,
-              "Terrain Raster": terrain2
+              "Terrain Raster": terrain2,
+              "Antique Canvas": antique
+
              };
 
              var overlaymaps = {
