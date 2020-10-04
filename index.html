@@ -138,7 +138,7 @@
       var PopDen; //2nd variable
 
       function resetHighlight(e) {
-          Covid.resetStyle(e.target);
+          Covid.resetStyle(e.target), PopDen.resetStyle(e.target);
       }
 
       function onEachFeature(feature, layer) {
@@ -176,8 +176,11 @@
               };
 
         PopDen = L.geoJson(data1,{
-              style:style2
-            }).addTo(map);
+              style:style2,
+              onEachFeature: onEachFeature
+            }).bindTooltip(function (layer){
+              return layer.feature.properties.County_Nam + '<p style="color:Black">'
+              }).addTo(map);
 
                   var popdenlegend = L.control({position: 'bottomleft'}); // Try the other three corners if you like.
 
