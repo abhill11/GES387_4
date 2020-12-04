@@ -138,7 +138,7 @@
       var PopDen; //2nd variable
 
       function resetHighlight(e) {
-          Covid.resetStyle(e.target), PopDen.resetStyle(e.target);
+          Covid.resetStyle(e.target);
       }
 
       function onEachFeature(feature, layer) {
@@ -149,6 +149,20 @@
 
 
 }
+
+function resetHighlight2(e) {
+    PopDen.resetStyle(e.target);
+}
+
+function onEachFeature2(feature, layer) {
+layer.on({
+  mouseover: highlightFeature, // Do what defined by the highlightFeature function on mouseover
+  mouseout: resetHighlight2,    // Do what defined by the resetHighlight function on mouseout
+});
+
+
+}
+
     Covid = L.geoJson(data,{
           style:style,
           onEachFeature: onEachFeature
@@ -177,7 +191,7 @@
 
         PopDen = L.geoJson(data1,{
               style:style2,
-              onEachFeature: onEachFeature
+              onEachFeature: onEachFeature2
             }).bindTooltip(function (layer){
               return layer.feature.properties.County_Nam + '<p style="color:Black">'
               }).addTo(map);
